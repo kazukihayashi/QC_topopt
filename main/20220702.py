@@ -3,7 +3,7 @@ from dwave.system.samplers import DWaveSampler
 from dwave.system.composites import EmbeddingComposite
 import numpy as np
 from LinearStructuralAnalysis import LinearStructuralAnalysis
-from Draw import draw
+# from Draw import draw
 
 '''
 
