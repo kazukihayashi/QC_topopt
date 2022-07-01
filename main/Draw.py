@@ -17,6 +17,6 @@ def draw(node,member,free,A,name): # !!! 入力にfreeを追加した（freeに�
   plt.xlabel("$x$ [m]") # 図にx軸ラベルを記載
   plt.ylabel("$y$ [m]") # 図にy軸ラベルを記載
   plt.gca().set_aspect('equal', adjustable='box') # x軸・y軸の表示を同じスケールに
-  plt.savefig(f"{name}.png")
+  plt.savefig(f"results/{name}.png")
   # plt.show() # 図を表示
   plt.clf()
