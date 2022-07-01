@@ -3,6 +3,7 @@ from dwave.system.samplers import DWaveSampler
 from dwave.system.composites import EmbeddingComposite
 import numpy as np
 from LinearStructuralAnalysis import LinearStructuralAnalysis
+# from Draw import draw
 
 '''
 
@@ -154,6 +155,7 @@ d,s,r = LinearStructuralAnalysis(node,connectivity,support,load,A,E)
 elongation = s*L/E
 strain_energy_init = np.sum(0.5*E*A/L*elongation**2) # total strain energy obtained by structural analysis
 EV_history[0] = strain_energy_init, np.sum(A*L)
+# draw(node,connectivity,free,A,0)
 
 for i in range(n_iter):
     A2 = np.copy(A)
@@ -203,6 +205,7 @@ for i in range(n_iter):
     H_values[2] = np.dot(h3_linear,A) + np.linalg.multi_dot([A,H3_quadratic,A])
     print(f"H_values:{H_values}")
     H_history[i] = H_values
+    # draw(node,connectivity,free,A,i+1)
     EV_history[i+1] = H_values[0]*strain_energy_init, np.sum(A*L)
 
 # np.savetxt("results/H_history.txt",H_history)
